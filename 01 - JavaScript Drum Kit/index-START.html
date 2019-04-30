@@ -58,7 +58,65 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
+  var keyBox = document.querySelectorAll('.key');
+  var audioBox = document.querySelectorAll('audio');
+  var keyArray = [];
 
+  for (var i = 0, len = keyBox.length; i < len; i++) {
+    // 顺序存储页面中每个按键盒子的data-key
+    keyArray.push(keyBox[i].getAttribute('data-key'));
+    // 利用动画结束事件来移除动画类名
+    keyBox[i].addEventListener('transitionend', function(e) {
+      var e = e || window.event;
+      var target = e.target || e.srcElement;
+      target.classList.remove('playing');
+    })
+  }
+
+  /**
+   * 主体逻辑函数
+   * {index} 当前盒子索引
+   */
+  function handleMain(index) {
+    keyBox[index].classList.add('playing');
+    audioBox[index].currentTime = 0;
+    audioBox[index].play();
+  }
+
+  window.addEventListener('keydown', handleKeydown);
+  function handleKeydown(e) {
+    var e = e || window.event;
+
+    if (keyArray.indexOf(String(e.keyCode)) < 0) return 0;
+
+    // 根据当前按下的键匹配页面内按键盒子的索引
+    var index = keyArray.indexOf(String(e.keyCode));
+    
+    handleMain(index);
+    // setTimeout(function() {
+    //   keyBox[index].classList.remove('playing');
+    // }, 50);
+  }
+
+  var keyWrapper = document.querySelector('.keys');
+
+  keyWrapper.addEventListener('click', handleClick);
+  function handleClick(e) {
+    var e = e || window.event;
+    var target = e.target || e.srcElement;
+
+    if (target.classList.contains('keys')) return;
+
+    if (target.parentNode.classList.contains('key')) {
+      var index = keyArray.indexOf(String(target.parentNode.getAttribute('data-key')));
+      
+      handleMain(index);
+    } else if (target.classList.contains('key')) {
+      var index = keyArray.indexOf(String(target.getAttribute('data-key')));
+
+      handleMain(index);
+    }
+  }
 </script>
 
 
