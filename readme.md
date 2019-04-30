@@ -2,7 +2,7 @@
 
 # JavaScript30
 
-这是Wes Bos大神发起的一个练习项目，项目中会给出所需静态文件。所以在这个练习中你只需要关注js的实现过程。项目的宣传网站： [https://JavaScript30.com](https://JavaScript30.com)
+这是Wes Bos大神发起的一个练习项目，项目中会给出所需静态文件。所以在这个练习中你只需要关注js的实现过程。javascript30官网： [https://JavaScript30.com](https://JavaScript30.com)
 
 项目的原始地址：[https://github.com/wesbos/JavaScript30](https://github.com/wesbos/JavaScript30)
 
