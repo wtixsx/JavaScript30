@@ -1,4 +1,4 @@
-# JavaScript30 Day01
+# JavaScript30 Day02
 
 >作者：W_peach
 >简介：[JavaScript30](https://javascript30.com) 是 [Wes Bos](https://github.com/wesbos) 推出的一个 30 天挑战。
