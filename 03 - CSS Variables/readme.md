@@ -23,7 +23,7 @@
 ## 知识点
 
 * css Varaibles(css 变量的应用)
-* HTML5自定义数据属性<pre>dataset</pre>
+* HTML5自定义数据属性<span style="color: #333;">dataset</span>
 * 数组的循环遍历
 * css3滤镜(filter)
 * :root伪类(我没使用html标签定义变量，所以没使用:root)
