@@ -31,29 +31,66 @@
 
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
+    // var oldInventor = new Array;
+    // for (var i = 0, len = inventors.length; i < len; i++) {
+    //   if (inventors[i].year < 1600 && inventors[i].year > 1500) {
+    //     oldInventor.push(inventors[i]);
+    //   }
+    // }
+    var oldInventor = inventors.filter(function(item) {
+      return item.year < 1600 && item.year > 1500
+    })
+    console.table(oldInventor)
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors' first and last names
+    var firstAndLast = inventors.map(function(item) {
+      return item.first + ' ' + item.last
+    })
+    console.table(firstAndLast)
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
+    inventors.sort(function(a ,b) {
+      return a.year - b.year
+    })
+    console.table(inventors);
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
+    var inventorsAge = inventors.reduce(function(accumulator, currentValue) {
+      return accumulator + (currentValue.passed - currentValue.year)
+    }, 0)
+    console.log(inventorsAge)
 
     // 5. Sort the inventors by years lived
+    inventors.sort(function(a ,b) {
+      return (a.passed - a.year) - (b.passed - b.year)
+    })
+    console.table(inventors)
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
 
     // 7. sort Exercise
-    // Sort the people alphabetically by last name
+    // Sort the people alphabetically（字母排序） by last name
+    people.sort(function(current, next) {
+      return current.split(', ')[0] - next.split(', ')[0];
+    })
+    console.log(people)
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-
+    var dataSum = data.reduce(function(obj, item) {
+      if (!obj[item]) {
+        obj[item] = 0;
+      }
+      obj[item]++
+      return obj
+    }, {});
+    console.log(dataSum)
   </script>
 </body>
 </html>
