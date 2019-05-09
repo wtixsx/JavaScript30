@@ -17,15 +17,15 @@
 
 ## 注意事项
 
-* 只能使用setProperty方法来改变对应的css属性值，其他方法都存在问题
-* 给选择器添加mousemove事件是为了实现拖动实时改变图片的css属性值
+* 只能使用`setProperty`方法来改变对应的css属性值，其他方法都存在问题
+* 给选择器添加`mousemove`事件是为了实现拖动实时改变图片的css属性值
 
 ## 知识点
 
 * css Varaibles(css 变量的应用)
 * HTML5自定义数据属性`dataset`
 * 数组的循环遍历
-* css3滤镜(filter)
+* css3滤镜`filter`
 * `:root`伪类(我没使用html标签定义变量，所以没使用`:root`)
 * input各原生选择器的使用
 

@@ -7,10 +7,10 @@
 
 ## 主要知识点
 
-1. `Array.prototype.filter:` （数组过滤）得到一个满足所有条件的数组，返回一个新数组
-2. `Array.prototype.map:` （数组映射）每个元素调用一个提供的函数后返回一个新数组
-3. `Array.prototype.sort:` （数组排序）对原始数组进行排序并返回数组，默认排序顺序是根据字符串Unicode码点
-4. `Array.prototype.reduce:` (数组累计器) 对数组的每个元素执行一个由您提供的reduce函数(升序执行)，将结果汇总为单个返回值
+* `Array.prototype.filter:` （数组过滤）得到一个满足所有条件的数组，返回一个新数组
+* `Array.prototype.map:` （数组映射）每个元素调用一个提供的函数后返回一个新数组
+* `Array.prototype.sort:` （数组排序）对原始数组进行排序并返回数组，默认排序顺序是根据字符串Unicode码点
+* `Array.prototype.reduce:` (数组累计器) 对数组的每个元素执行一个由您提供的reduce函数(升序执行)，将结果汇总为单个返回值
 
 ## 碰到的问题
 
