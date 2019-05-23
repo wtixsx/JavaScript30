@@ -26,6 +26,7 @@
     .panels {
       min-height: 100vh;
       overflow: hidden;
+      display: flex;
     }
 
     .panel {
@@ -43,6 +44,10 @@
       font-size: 20px;
       background-size: cover;
       background-position: center;
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      flex-direction: column;
     }
 
     .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
@@ -56,7 +61,17 @@
       margin: 0;
       width: 100%;
       transition: transform 0.5s;
+      display: flex;
+      flex: 1 0 auto;
+      justify-content: center;
+      align-items: center;
     }
+
+
+    .panel > p:first-child { transform: translateY(-100%); }
+    .panel > p.active:first-child { transform:  translateY(0); }
+    .panel > p:last-child { transform: translateY(100%); }
+    .panel > p.active:last-child { transform: translateY(0); }
 
     .panel p {
       text-transform: uppercase;
@@ -71,6 +86,7 @@
 
     .panel.open {
       font-size: 40px;
+      flex: 2;
     }
 
   </style>
@@ -105,7 +121,25 @@
   </div>
 
   <script>
+    var panels = document.querySelectorAll('.panel');
+    var panelBox = document.querySelector('.panels');
 
+    panelBox.addEventListener('click', function(e) {
+      var event = e || window.event;
+      var target = event.target || event.srcElement;
+      if (target.classList.contains('panel')) {
+        target.classList.toggle('open');
+        for (var i = 0, len = target.children.length; i < len; i++) {
+          target.children[i].classList.toggle('active');
+        }
+      }
+      if (target.parentNode.classList.contains('panel')) {
+        target.parentNode.classList.toggle('open');
+        for (var i = 0, len = target.parentNode.children.length; i < len; i++) {
+          target.parentNode.children[i].classList.toggle('active');
+        }
+      }
+    })
   </script>
 
 
